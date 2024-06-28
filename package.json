@@ -1,16 +1,12 @@
 {
     "name": "vue3-eimzo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "serve": "vite preview"
     },
-    "author": {
-        "name": "Surat Abdullayev",
-        "url": "https://github.com/grand-programmer/vue3-eimzo",
-        "email": "suratbek92@gmail.com"
-    },
+    "author": "Surat Abdullayev <suratbek92@gmail.com> (https://github.com/grand-programmer/vue3-eimzo)",
     "files": [
         "dist"
     ],
@@ -30,5 +26,22 @@
         "vite": "^4.0.0",
         "@vitejs/plugin-vue": "^4.0.0",
         "typescript": "^4.0.0"
-    }
+    },
+    "description": "## Installation https://www.npmjs.com/package/vue3-eimzo ```sh npm i vue3-eimzo # or yarn add vue3-eimzo ```",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/grand-programmer/vue3-eimzo.git"
+    },
+    "keywords": [
+        "e-imzo",
+        "vue3-eimzo"
+    ],
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/grand-programmer/vue3-eimzo/issues"
+    },
+    "homepage": "https://github.com/grand-programmer/vue3-eimzo#readme"
 }
