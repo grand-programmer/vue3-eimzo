@@ -1,6 +1,6 @@
 {
     "name": "vue3-eimzo",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -27,7 +27,7 @@
         "@vitejs/plugin-vue": "^4.0.0",
         "typescript": "^4.0.0"
     },
-    "description": "## Installation https://www.npmjs.com/package/vue3-eimzo ```sh npm i vue3-eimzo # or yarn add vue3-eimzo ```",
+    "description": "Vue3 E-imzo plugin",
     "directories": {
         "test": "tests"
     },
@@ -37,7 +37,7 @@
     },
     "keywords": [
         "e-imzo",
-        "vue3-eimzo"
+        "vue3"
     ],
     "license": "ISC",
     "bugs": {

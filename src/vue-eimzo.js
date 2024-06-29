@@ -1,6 +1,6 @@
-import EIMZO from './eimzo/EIMZO'
-import './eimzo/e-imzo.js'
 import './eimzo/e-imzo-client.js'
+import './eimzo/e-imzo.js'
+import EIMZO from './eimzo/EIMZO'
 
 
 /**

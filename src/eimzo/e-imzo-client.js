@@ -1,4 +1,6 @@
 /* eslint-disable */
+
+import { CAPIWS } from './e-imzo'
 Date.prototype.yyyymmdd = function () {
     var yyyy = this.getFullYear().toString();
     var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based

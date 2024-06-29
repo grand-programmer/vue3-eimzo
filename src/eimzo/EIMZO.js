@@ -1,6 +1,7 @@
+import {CAPIWS} from './e-imzo.js'
 import {EIMZOClient as client} from './e-imzo-client'
 
-const CAPIWS = window.CAPIWS
+
 
 /**
  * @typedef Cert

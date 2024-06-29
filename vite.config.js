@@ -13,7 +13,7 @@ export default defineConfig({
     build: {
         lib: {
             // eslint-disable-next-line no-undef
-            entry: path.resolve(__dirname, 'src/index.js'),
+            entry: path.resolve(__dirname, './src/index.js'),
             name: 'vue3-eimzo',
             fileName: (format) => `vue3-eimzo.${format}.js`,
         },

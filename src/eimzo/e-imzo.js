@@ -375,7 +375,7 @@
     window.Base64 = global.Base64;
 })(this);
 
-const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
+export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
     URL: (window.location.protocol.toLowerCase() === "https:" ? "wss://127.0.0.1:64443" : "ws://127.0.0.1:64646") + "/service/cryptapi",
     callFunction: function (funcDef, callback, error) {
         if (!window.WebSocket) {
