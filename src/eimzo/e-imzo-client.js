@@ -1,3 +1,6 @@
+/* eslint-disable */
+
+import { CAPIWS } from './e-imzo';
 Date.prototype.yyyymmdd = function () {
     var yyyy = this.getFullYear().toString();
     var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
@@ -102,7 +105,7 @@ String.prototype.splitKeep = function (splitter, ahead) {
     return result;
 };
 
-var EIMZOClient = {
+export const EIMZOClient = {
     NEW_API: false,
     NEW_API2: false,
     NEW_API3: false,

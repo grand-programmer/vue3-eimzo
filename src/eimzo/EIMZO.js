@@ -181,8 +181,8 @@ export default class EIMZO {
      * @return {Promise<SignPkcs7Result>}
      */
     async signPkcs7(cert, content) {
-        let loadKeyResult = cert === 'idcard' ? undefined : await this.loadKey(cert)
-        const keyId = cert === 'idcard' ? 'idcard' : loadKeyResult?.id
+        let loadKeyResult = ('idcard','baikey').includes(cert) ? undefined : await this.loadKey(cert)
+        const keyId = ('idcard','baikey').includes(cert) ? cert : loadKeyResult?.id
 
         return new Promise((resolve, reject) => {
             CAPIWS.callFunction({

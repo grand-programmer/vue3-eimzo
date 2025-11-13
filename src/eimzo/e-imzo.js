@@ -1,4 +1,5 @@
-(function(global) {
+/* eslint-disable */
+(function (global) {
     'use strict';
     // existing version for noConflict()
     var _Base64 = global.Base64;
@@ -174,7 +175,7 @@
     // that's it!
 })(this);
 
-CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
+export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
     URL: (window.location.protocol.toLowerCase() === "https:" ? "wss://127.0.0.1:64443" : "ws://127.0.0.1:64646") + "/service/cryptapi",
     callFunction: function(funcDef, callback, error){
         if (!window.WebSocket){
@@ -188,12 +189,9 @@ CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onclose = function(e){
-            if(error) {
-                if(e.code != 1000){
-                    error(e.code);
-                }
-            }
+        socket.onerror = function (e) {
+            if (error)
+                error(e);
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -216,12 +214,9 @@ CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onclose = function(e){
-            if(error) {
-                if(e.code != 1000){
-                    error(e.code);
-                }
-            }
+        socket.onerror = function (e) {
+            if (error)
+                error(e);
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -245,12 +240,9 @@ CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onclose = function(e){
-            if(error) {
-                if(e.code != 1000){
-                    error(e.code);
-                }
-            }
+        socket.onerror = function (e) {
+            if (error)
+                error(e);
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -274,12 +266,9 @@ CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onclose = function(e){
-            if(error) {
-                if(e.code != 1000){
-                    error(e.code);
-                }
-            }
+        socket.onerror = function (e) {
+            if (error)
+                error(e);
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
