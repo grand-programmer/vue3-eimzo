@@ -189,9 +189,12 @@ export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onerror = function (e) {
-            if (error)
-                error(e);
+        socket.onclose = function(e){
+            if(error) {
+                if(e.code != 1000){
+                    error(e.code);
+                }
+            }
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -214,9 +217,12 @@ export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onerror = function (e) {
-            if (error)
-                error(e);
+        socket.onclose = function(e){
+            if(error) {
+                if(e.code != 1000){
+                    error(e.code);
+                }
+            }
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -240,9 +246,12 @@ export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onerror = function (e) {
-            if (error)
-                error(e);
+        socket.onclose = function(e){
+            if(error) {
+                if(e.code != 1000){
+                    error(e.code);
+                }
+            }
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
@@ -266,9 +275,12 @@ export const CAPIWS = (typeof EIMZOEXT !== 'undefined') ? EIMZOEXT : {
         } catch (e){
             error(e);
         }
-        socket.onerror = function (e) {
-            if (error)
-                error(e);
+        socket.onclose = function(e){
+            if(error) {
+                if(e.code != 1000){
+                    error(e.code);
+                }
+            }
         };
         socket.onmessage = function(event){
             var data = JSON.parse(event.data);
