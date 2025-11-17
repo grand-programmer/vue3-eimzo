@@ -2,7 +2,6 @@ import {CAPIWS} from './e-imzo.js'
 import {EIMZOClient as client} from './e-imzo-client'
 
 
-
 /**
  * @typedef Cert
  * @property {string} disk
@@ -181,22 +180,28 @@ export default class EIMZO {
      * @return {Promise<SignPkcs7Result>}
      */
     async signPkcs7(cert, content) {
-        let loadKeyResult = ('idcard','baikey').includes(cert) ? undefined : await this.loadKey(cert)
-        const keyId = ('idcard','baikey').includes(cert) ? cert : loadKeyResult?.id
-
-        return new Promise((resolve, reject) => {
-            CAPIWS.callFunction({
-                name: 'create_pkcs7', plugin: 'pkcs7', arguments: [
-                    window.Base64.encode(content), keyId, 'no'
-                ]
-            }, (event, data) => {
-                if (data.success) {
-                    resolve(data)
-                } else {
-                    reject('Failed')
-                }
-            }, reject)
-        })
+        let loadKeyResult = ["idcard", "baikey"].includes(cert) ? undefined : await this.loadKey(cert)
+        const keyId = ["idcard", "baikey"].includes(cert) ? cert : loadKeyResult?.id
+        try {
+            return new Promise((resolve, reject) => {
+                CAPIWS.callFunction({
+                    name: 'create_pkcs7',
+                    plugin: 'pkcs7',
+                    arguments: [
+                        window.Base64.encode(content), keyId, 'no'
+                    ]
+                }, (event, data) => {
+                    if (data.success) {
+                        resolve(data)
+                    } else {
+                        reject('Failed')
+                    }
+                }, reject,false,false)
+            })
+        } catch (e) {
+            console.log(e)
+            return null;
+        }
     }
 
     /**
@@ -205,12 +210,13 @@ export default class EIMZO {
      * @param {?Function} timestamper - function to get timestamp data from server
      * @return {Promise<SignPkcs7Result>}
      */
-    async createPkcs7(id, content, timestamper, enableAttachTimestamp) {
+    async createPkcs7(id, content, timestamper) {
+
         return new Promise((resolve, reject) => {
             client.createPkcs7(id, content, timestamper,
                 (/* string */ pkcs7) => {
                     resolve(pkcs7)
-                }, reject, false, false, enableAttachTimestamp);
+                }, reject, false, false);
         })
     }
 

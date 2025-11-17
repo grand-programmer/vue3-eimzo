@@ -55,7 +55,7 @@ export default {
             let result = await this.$eimzo.signPkcs7(key, 'Hello world')
             let token = await this.$eimzo.getTimestampToken(result.signature_hex)
 
-            console.log(result, token)
+            //console.log(result, token)
         },
 
         async handleImzo() {
