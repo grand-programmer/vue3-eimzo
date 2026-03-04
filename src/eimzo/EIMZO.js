@@ -72,13 +72,36 @@ export default class EIMZO {
 
     async isIDCardPlugged() {
         return new Promise((resolve, reject) => {
-            client.idCardIsPLuggedIn(resolve, reject)
+            client.idCardIsPLuggedIn(
+                function (major, minor) {
+                    resolve({major, minor})
+                },
+                function (error, message) {
+                    reject(error, message)
+                })
         })
     }
 
     async isBAIKTokenPLuggedIn() {
         return new Promise((resolve, reject) => {
-            client.isBAIKTokenPLuggedIn(resolve, reject)
+            client.isBAIKTokenPLuggedIn(
+                function (major, minor) {
+                    resolve({major, minor})
+                },
+                function (error, message) {
+                    reject(error, message)
+                })
+        })
+    }
+    async isCKCPLuggedIn() {
+        return new Promise((resolve, reject) => {
+            client.isCKCPLuggedIn(
+                function (major, minor) {
+                    resolve({major, minor})
+                },
+                function (error, message) {
+                    reject(error, message)
+                })
         })
     }
 
