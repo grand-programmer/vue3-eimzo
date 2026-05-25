@@ -231,6 +231,8 @@ export default class EIMZO {
      * @param {string} id of loaded cert
      * @param {string} content
      * @param {?Function} timestamper - function to get timestamp data from server
+     * @param detached
+     * @param isDataBase64Encoded
      * @return {Promise<SignPkcs7Result>}
      */
     async createPkcs7(id, content, timestamper,detached=false, isDataBase64Encoded=false) {

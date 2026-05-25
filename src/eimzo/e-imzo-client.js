@@ -191,7 +191,7 @@ export const EIMZOClient = {
         } else {
             CAPIWS.callFunction({plugin: "idcard", name: "list_readers"}, function (event, data) {
                 if (data.success) {
-                    success(data.readers.length>0);
+                    success(data.readers);
                 } else {
                     fail(null, data.reason);
                 }
@@ -207,7 +207,7 @@ export const EIMZOClient = {
         } else {
             CAPIWS.callFunction({plugin: "baikey", name: "list_tokens"}, function (event, data) {
                 if (data.success) {
-                    success(data.tokens.length>0);
+                    success(data.tokens);
                 } else {
                     fail(null, data.reason);
                 }
@@ -223,7 +223,7 @@ export const EIMZOClient = {
         } else {
             CAPIWS.callFunction({plugin: "ckc", name: "list_ckc"}, function (event, data) {
                 if (data.success) {
-                    success(data.devices.length>0);
+                    success(data.devices);
                 } else {
                     fail(null, data.reason);
                 }
